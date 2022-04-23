@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("./partials/head.ejs") %> 
+<body>
+  <H1>Cars</H1>
+  <ul>
+    <% for (car of cars) { %>
+      <li><%= car.name %> </li>  
+    <% } %> 
+  </ul>
+  <form action="/cars/new">
+    <input type="button" value="New Car">
+  </form>
+</body>
+</html>
