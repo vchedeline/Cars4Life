@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("./partials/head.ejs") %> 
+<body>
+  <H1><%= car.name %> </H1>
+  <main>
+    <div>
+      <a href="/cars/<%=car._id%>/edit">
+        <input type="button" value="Edit">
+      </a>
+      <form action="/cars/<%=car._id%>?_method=delete" method="post">
+        <input type="submit" value="Delete">
+      </form>
+    </div>
+    <div>
+      <img src="<%= car.img %> " alt="">
+      <p>Make: <%= car.make %> </p>
+    </div>
+  </main>
+
+</body>
+</html>
