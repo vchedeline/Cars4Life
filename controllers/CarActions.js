@@ -28,7 +28,7 @@ function newCar(req, res) {
 }
 
 async function deleteCar(req, res) {
-  await Car.findOneAndDelete(req.params.id).catch((err) => res.send(err));
+  await Car.findByIdAndDelete(req.params.id).catch((err) => res.send(err));
   res.redirect("/cars");
 }
 
@@ -41,7 +41,7 @@ async function update(req, res) {
 
 async function create(req, res) {
   await Car.create(req.body).catch((err) => res.send(err));
-  res.redirect("/products");
+  res.redirect("/cars");
 }
 
 async function edit(req, res) {

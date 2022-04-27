@@ -2,17 +2,58 @@
 <html lang="en">
 <%- include("./partials/head.ejs") %> 
 <body>
-  <H1>Hello Edits</H1>
-  <h2>Editing <%= car.name %> </h2>
-  <main>
-    <div>
+  <header>
+    <%- include("./partials/header") %> 
+  </header>
+  <div class="video-div">
+    <video playsinline autoplay muted loop id="myVideo">
+      <source src="https://i.imgur.com/a7fnNPA.mp4" type="video/mp4">
+    </video>
+    <main id="main-edit">
+      <h1 class="title">Editing <%= car.name %> </h1>
       <form action="/cars/<%= car._id%>?_method=PUT" method="post">
-        Name: <input type="text" name="name" value="<%=car.name%>">
-        Make: <input type="text" name="make" value="<%=car.make%> ">
-        Model: <input type="text" name="model" value="<%=car.model%> ">
-        <input type="submit" value="Update">
+        <div class="details ">
+          <div>
+            <div>
+              Name: <input type="text" name="name" value="<%=car.name%>"> 
+            </div>
+            <div>
+              Make: <input type="text" name="make" value="<%=car.make%>"> 
+            </div>
+            <div>
+              Model: <input type="text" name="model" value="<%=car.model%>"> 
+            </div>
+            <div>
+              Exterior: <input type="text" name="exterior" value="<%=car.exterior%>">
+            </div>
+            <div>
+              Interior: <input type="text" name="interior" value="<%=car.interior%>">
+            </div>
+          </div>
+          <div>
+            <div>
+              Year: <input type="text" name="year" value="<%=car.year%>">
+            </div>
+            <div>
+              Drivetrain: <input type="text" name="drivetrain" value="<%=car.drivetrain%>">
+            </div>
+            <div>
+              Engine: <input type="text" name="engine" value="<%=car.engine%>">
+            </div>
+            <div>
+              Image Url: <input type="text" name="img" value="<%=car.img%>">
+            </div>
+            <div>
+              Price: <input type="number" name="price" value="<%=car.price%>">
+            </div>
+          </div>
+        </div>
+        <input id="btn-update" type="submit" value="Update <%= car.name %> ">
       </form>
-    </div>
-  </main>
+    </main>
+  </div>
+  <footer>
+    <%- include("./partials/footer") %> 
+  </footer>
 </body>
 </html>

@@ -1,7 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include("./partials/head.ejs") %> 
+<%- include("./partials/head") %> 
 <body>
-  <H1>Hello Cars 4 Life!</H1>
+  <header>
+    <%- include("./partials/header") %> 
+  </header>
+  <div class="video-div">
+    <video playsinline autoplay muted loop id="myVideo">
+      <source src="https://i.imgur.com/a7fnNPA.mp4" type="video/mp4">
+    </video>
+    <main id="main-home">
+      <h1 id="welcome">
+        <a href="/cars">
+         Welcome To Cars 4 Life</h1>
+        </a>
+    </main>
+  </div>
+  <footer>
+    <%- include("./partials/footer") %> 
+  </footer>
 </body>
 </html>

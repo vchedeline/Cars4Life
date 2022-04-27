@@ -2,21 +2,45 @@
 <html lang="en">
 <%- include("./partials/head.ejs") %> 
 <body>
-  <H1><%= car.name %> </H1>
-  <main>
-    <div>
-      <a href="/cars/<%=car._id%>/edit">
-        <input type="button" value="Edit">
-      </a>
-      <form action="/cars/<%=car._id%>?_method=delete" method="post">
-        <input type="submit" value="Delete">
-      </form>
-    </div>
-    <div>
-      <img src="<%= car.img %> " alt="">
-      <p>Make: <%= car.make %> </p>
-    </div>
-  </main>
-
+  <header>
+    <%- include("./partials/header") %> 
+  </header>
+  <div class="video-div">
+    <video playsinline autoplay muted loop id="myVideo">
+      <source src="https://i.imgur.com/a7fnNPA.mp4" type="video/mp4">
+    </video>
+    <main id="main-show">
+      <div class="car-img">
+        <img src="<%= car.img %> " alt="">
+        <div class="edit-del">
+          <a href="/cars/<%=car._id%>/edit">
+            <input id="btn-edit" type="button" value="Edit">
+          </a>
+          <form action="/cars/<%=car._id%>?_method=delete" method="post">
+            <input id="btn-del" type="submit" value="Delete">
+          </form>
+        </div>
+      </div>
+      <div class="car-spec">
+        <h1 class="title"><%=car.name%></h1>
+        <div>
+           <p>Make: <%= car.make %> </p>
+           <p>Model: <%= car.model %> </p>
+           <p>Exterior: <%= car.exterior %></p>
+           <p>Interior: <%= car.interior %> </p>
+           <p>Year: <%= car.year %> </p>
+           <p>Drivetrain: <%= car.drivetrain %> </p>
+           <p>Engine: <%= car.engine %> </p>
+           <p>Price: <%= new Intl.NumberFormat("en-US", {
+            style: "currency",
+            currency: "USD",
+          }).format(car.price) %> </p>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer>
+    <%- include("./partials/footer") %> 
+  </footer>
 </body>
 </html>

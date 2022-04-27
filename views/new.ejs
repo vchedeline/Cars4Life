@@ -1,7 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include("./partials/head.ejs") %> 
-<body>
-  <H1>Hello New</H1>
+<%- include("./partials/head") %> 
+<body>  
+  <header>
+    <%- include("./partials/header") %> 
+  </header>
+  <div class="video-div">
+    <video playsinline autoplay muted loop id="myVideo">
+      <source src="https://i.imgur.com/a7fnNPA.mp4" type="video/mp4">
+    </video>
+    <main id="main-new">
+      <h1 class="title">My New Car</h1>
+      <form action="/cars" method="post">
+        <div class="details ">
+          <div>
+            <div>
+              Name: <input type="text" name="name" > 
+            </div>
+            <div>
+              Make: <input type="text" name="make"> 
+            </div>
+            <div>
+              Model: <input type="text" name="model"> 
+            </div>
+            <div>
+              Exterior: <input type="text" name="exterior">
+            </div>
+            <div>
+              Interior: <input type="text" name="interior">
+            </div>
+          </div>
+          <div>
+            <div>
+              Year: <input type="text" name="year">
+            </div>
+            <div>
+              Drivetrain: <input type="text" name="drivetrain">
+            </div>
+            <div>
+              Engine: <input type="text" name="engine">
+            </div>
+            <div>
+              Image Url: <input type="text" name="img" value="https://i.imgur.com/13hynIZ.png">
+            </div>
+            <div>
+              Price: <input type="number" name="price">
+            </div>
+          </div>
+        </div>
+        <input id="btn-new" type="submit" value="Submit New Car">
+      </form>
+    </main>
+  </div>
+  <footer>
+    <%- include("./partials/footer") %> 
+  </footer>
 </body>
 </html>
